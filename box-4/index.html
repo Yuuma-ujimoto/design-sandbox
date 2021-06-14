@@ -8,15 +8,20 @@
 
 </head>
 <body>
-<div id="example-2">
-    <!-- `greet` は、あらかじめ定義したメソッドの名前 -->
+<!--
+Vue.jsチュートリアルから一部コード引用
+https://jp.vuejs.org/v2/guide/index.html
+-->
+<div id="app">
+
     <i v-on:click="greet">Greet</i>
+    <!--iタグで定義したfontawesomeのアイコンはv-on:clickに反応しないっぽい-->
     <i class="fas fa-plus" v-on:click="test">a</i>
 
 </div>
 <script>
     var example2 = new Vue({
-        el: '#example-2',
+        el: '#app',
         data: {
             name: 'Vue.js'
         },

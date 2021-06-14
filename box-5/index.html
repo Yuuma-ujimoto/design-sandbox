@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+</head>
+<body>
+<!--なんかできそうで出来ない-->
+<div id="app">
+    <div v-for="item in list">
+        <div v-html="item"></div>
+    </div>
+</div>
+<script>
+    let app = new Vue({
+        el: "#app",
+        data: {
+            list: [
+                '<input type="text"><button v-on:click="test">+</button>'
+            ]
+        }, methods: {
+            test: function () {
+                console.log("call")
+                this.list.push('<input type="text"> <button v-on:click="test">+</button>')
+            }
+        }
+    })
+</script>
+</body>
+</html>
