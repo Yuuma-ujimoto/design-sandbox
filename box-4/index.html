@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+</head>
+<body>
+<div id="example-2">
+    <!-- `greet` は、あらかじめ定義したメソッドの名前 -->
+    <i v-on:click="greet">Greet</i>
+    <i class="fas fa-plus" v-on:click="test">a</i>
+
+</div>
+<script>
+    var example2 = new Vue({
+        el: '#example-2',
+        data: {
+            name: 'Vue.js'
+        },
+        // `methods` オブジェクトの下にメソッドを定義する
+        methods: {
+            greet: function (event) {
+                // メソッド内の `this` は、 Vue インスタンスを参照します
+                alert('Hello ' + this.name + '!')
+                // `event` は、ネイティブ DOM イベントです
+                if (event) {
+                    alert(event.target.tagName)
+                }
+            },
+            test: function (event) {
+                console.log("call")
+            }
+        }
+    })
+</script>
+</body>
+</html>
